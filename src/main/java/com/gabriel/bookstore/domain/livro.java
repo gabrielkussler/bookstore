@@ -7,7 +7,7 @@ import java.util.List;
 import javax.persistence.GenerationType;
 
 
-
+@Entity
 public class livro implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -18,6 +18,8 @@ public class livro implements Serializable{
 	private String nome_autor;
 	private String texto;
 
+	@ManyToOne
+	@JoinColumn(name = "categoria_id")
 	private Categoria categoria;
 
 	public livro() {
